@@ -20,6 +20,11 @@ Create  Table Cours(
     foreign key (idUser) references User(id)
 );
 
+Create table Participe (
+    idCours integer not null,
+    idEleve integer not null,
+    primary key(idCours,idEleve)
+);
 
 Create Table Eleve(
     id integer not null auto_increment,
@@ -27,13 +32,11 @@ Create Table Eleve(
     prenom varchar(50),
     mail varchar(50),
     telephone varchar(10),
-    idCours integer,
-    primary key(id),
-    foreign key (idCours) references Cours(id)
-
+    primary key(id)
 );
+
 insert into User (nom,prenom,mdp,administrator) values ('losio','admin','mdp',1);
 insert into User (nom,prenom,mdp,administrator) values('Nom','BOB','mdp',0);
-insert into Cours (nom,ladate,idUser)values('PC',1,'2002-03-27');
-insert into Eleve (nom,prenom,mail,telephone,idCours) values('Nom','Prenom','pre@outlook.com','0625467825',1);
-insert into Eleve (nom,prenom,mail,telephone,idCours) values('Name','Pre','prezo@outlook.com','0622167825',1);
+insert into Cours (nom,ladate,idUser)values('PC','2002-03-27',1);
+insert into Eleve (nom,prenom,mail,telephone) values('Nom','Prenom','pre@outlook.com','0625467825');
+insert into Eleve (nom,prenom,mail,telephone) values('Name','Pre','prezo@outlook.com','0622167825');

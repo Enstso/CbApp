@@ -34,7 +34,7 @@ namespace Model
         public int Id { get { return this.id; } }
         public string Nom { get { return this.nom; } set { this.nom = value; } }
         public string Prenom { get { return this.prenom; } set { this.prenom = value; } }
-        public string Mdp { set { this.mdp = value; } }
+        public string Mdp { get { return this.mdp; } set { this.mdp = value; } }
         public bool Admin { get { return this.admin; } set { this.Admin = value; } }
 
         public override string ToString()

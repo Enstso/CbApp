@@ -14,18 +14,16 @@ namespace Model
         private string nom;
         private DateTime date;
 
-        public Cours(int id, List<Eleve> eleves, User user,string nom, DateTime date)
+        public Cours(int id,User user,string nom, DateTime date)
         {
             this.id = id;
-            this.eleves = eleves;
             this.nom = nom;
             this.user = user;
             this.date = date;
         }
 
-        public Cours(List<Eleve> eleves, User user, DateTime date, string nom)
+        public Cours(User user, DateTime date, string nom)
         {
-            this.eleves = eleves;
             this.user = user;
             this.date = date;
             this.nom = nom;

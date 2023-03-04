@@ -1,0 +1,13 @@
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\bin\Debug\Dao.dll
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\bin\Debug\Dao.pdb
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\bin\Debug\Model.dll
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\bin\Debug\MySql.Data.dll
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\bin\Debug\System.Memory.dll
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\bin\Debug\System.Buffers.dll
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\bin\Debug\Model.pdb
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\obj\Debug\Dao.csproj.CopyComplete
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\obj\Debug\Dao.dll
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\obj\Debug\Dao.pdb
+C:\Users\Zunaid\Desktop\app-cabinet-action\Dao\obj\Debug\Dao.csproj.AssemblyReference.cache

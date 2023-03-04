@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dao">
+      <HintPath>..\Dao\bin\Debug\Dao.dll</HintPath>
+    </Reference>
+    <Reference Include="Model">
+      <HintPath>..\Model\bin\Debug\Model.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,52 +58,109 @@
     <Compile Include="FConnection.Designer.cs">
       <DependentUpon>FConnection.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fcours.cs">
+    <Compile Include="FCours.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fcours.Designer.cs">
-      <DependentUpon>Fcours.cs</DependentUpon>
+    <Compile Include="FCours.Designer.cs">
+      <DependentUpon>FCours.cs</DependentUpon>
     </Compile>
-    <Compile Include="Feleves.cs">
+    <Compile Include="FEleves.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Feleves.Designer.cs">
-      <DependentUpon>Feleves.cs</DependentUpon>
+    <Compile Include="FEleves.Designer.cs">
+      <DependentUpon>FEleves.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fnewcours.cs">
+    <Compile Include="FMainAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fnewcours.Designer.cs">
-      <DependentUpon>Fnewcours.cs</DependentUpon>
+    <Compile Include="FMainAdmin.Designer.cs">
+      <DependentUpon>FMainAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fneweleves.cs">
+    <Compile Include="FNewCours.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fneweleves.Designer.cs">
-      <DependentUpon>Fneweleves.cs</DependentUpon>
+    <Compile Include="FNewCours.Designer.cs">
+      <DependentUpon>FNewCours.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fnewuser.cs">
+    <Compile Include="FNewEleves.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fnewuser.Designer.cs">
-      <DependentUpon>Fnewuser.cs</DependentUpon>
+    <Compile Include="FNewEleves.Designer.cs">
+      <DependentUpon>FNewEleves.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fuser.cs">
+    <Compile Include="FNewParticipe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fuser.Designer.cs">
-      <DependentUpon>Fuser.cs</DependentUpon>
+    <Compile Include="FNewParticipe.Designer.cs">
+      <DependentUpon>FNewParticipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="main.cs">
+    <Compile Include="FNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main.Designer.cs">
-      <DependentUpon>main.cs</DependentUpon>
+    <Compile Include="FNewUser.Designer.cs">
+      <DependentUpon>FNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FUser.Designer.cs">
+      <DependentUpon>FUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMain.Designer.cs">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FVoir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FVoir.Designer.cs">
+      <DependentUpon>FVoir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FVoirCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FVoirCours.Designer.cs">
+      <DependentUpon>FVoirCours.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="main.resx">
-      <DependentUpon>main.cs</DependentUpon>
+    <EmbeddedResource Include="FConnection.resx">
+      <DependentUpon>FConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCours.resx">
+      <DependentUpon>FCours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FEleves.resx">
+      <DependentUpon>FEleves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMain.resx">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMainAdmin.resx">
+      <DependentUpon>FMainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FNewCours.resx">
+      <DependentUpon>FNewCours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FNewEleves.resx">
+      <DependentUpon>FNewEleves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FNewParticipe.resx">
+      <DependentUpon>FNewParticipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FNewUser.resx">
+      <DependentUpon>FNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FUser.resx">
+      <DependentUpon>FUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FVoir.resx">
+      <DependentUpon>FVoir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FVoirCours.resx">
+      <DependentUpon>FVoirCours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

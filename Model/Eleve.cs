@@ -13,25 +13,25 @@ namespace Model
         private string prenom;
         private string mail;
         private string telephone;
-        private int idCours;
+        //private int idCours;
 
-        public Eleve(int id, string nom, string prenom, string mail, string telephone,int idCours)
+        public Eleve(int id, string nom, string prenom, string mail, string telephone)
         {
             this.id = id;
             this.nom = nom;
             this.prenom = prenom;
             this.mail = mail;
             this.telephone = telephone;
-            this.idCours = idCours;
+            //this.idCours = idCours;
         }
 
-        public Eleve(string nom, string prenom, string mail, string telephone, int idCours)
+        public Eleve(string nom, string prenom, string mail, string telephone)
         {
             this.nom = nom;
             this.prenom = prenom;
             this.mail = mail;
             this.telephone = telephone;
-            this.idCours = idCours;
+            //this.idCours = idCours;
         }
 
         public int Id { get { return this.id; } }
@@ -39,11 +39,11 @@ namespace Model
         public string Prenom { get { return this.prenom; } set { this.prenom = value; } }
         public string Mail { get { return this.mail; } set { this.mail = value; } }
         public string Telephone { get { return this.telephone; } set { this.telephone = value; } }
-        public int IdCours { get { return this.idCours; } set { this.idCours = value; } }
+        //public int IdCours { get { return this.idCours; } set { this.idCours = value; } }
 
         public override string ToString()
         {
-            return string.Format(" Elève {0} {1} mail : {2} num : {3} du cours : {4}", this.nom,this.prenom,this.mail,this.telephone,this.idCours);
+            return string.Format(" Elève {0} {1} mail : {2} num : {3}", this.nom,this.prenom,this.mail,this.telephone);
         }
     }
 }

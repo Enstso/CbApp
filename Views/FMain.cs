@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Views
 {
-    public partial class main : Form
+    public partial class FMain : Form
     {
-        public main()
+        public FMain()
         {
             InitializeComponent();
+            this.FormClosed += FMain_FormClosed;
+        }
+
+        private void FMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

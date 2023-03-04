@@ -1,6 +1,6 @@
 ﻿namespace Views
 {
-    partial class main
+    partial class FMain
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -28,20 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // main
+            // listBox1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(102, 75);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(484, 244);
+            this.listBox1.TabIndex = 0;
+            // 
+            // FMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "main";
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.listBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "FMain";
             this.Text = "Fmain";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
