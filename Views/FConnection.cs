@@ -34,7 +34,8 @@ namespace Views
                     }
                     else
                     {
-                        FUser fmain = new FUser(false);
+                        int id = daoUser.GetIdByNom(this.tbPrenom.Text, this.tbMdp.Text);
+                        FCours fmain = new FCours(false,id);
                         fmain.Show();
                         this.Opacity = 0;
                     }

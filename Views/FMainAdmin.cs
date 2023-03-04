@@ -23,7 +23,7 @@ namespace Views
 
         private void BtnVoirCours_Click(object sender, EventArgs e)
         {
-            FCours fCours = new FCours();
+            FCours fCours = new FCours(true,0);
             fCours.Show();
         }
 
@@ -35,7 +35,7 @@ namespace Views
 
         private void BtnUser_Click(object sender, EventArgs e)
         {
-            FUser fUser = new FUser(true);
+            FUser fUser = new FUser();
             fUser.ShowDialog();
         }
 

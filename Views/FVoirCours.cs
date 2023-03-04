@@ -16,15 +16,28 @@ namespace Views
     {
         DaoEleve daoEleve = new DaoEleve();
         DaoParticipe daoParticipe = new DaoParticipe();
-        public FVoirCours(int idCours)
+        public FVoirCours(int idCours,bool admin)
         {
             InitializeComponent();
+            if (admin == false)
+            {
+                this.btnAjouter.Enabled = false;
+                this.btnAjouter.Visible = false;
+
+                this.btnRafraichir.Enabled = false;
+                this.btnRafraichir.Visible = false;
+
+                this.btnSupprimer.Enabled = false;
+                this.btnSupprimer.Visible = false;
+            }
             this.tbIdCours.Text = idCours.ToString();
             this.load(daoEleve.GetElevesByCours(idCours));
             this.btnAjouter.Click += BtnAjouter_Click;
             this.btnSupprimer.Click += BtnSupprimer_Click;
             this.btnRafraichir.Click += BtnRafraichir_Click;
         }
+
+        
 
         private void BtnRafraichir_Click(object sender, EventArgs e)
         {

@@ -139,6 +139,30 @@ namespace Dao
             }
         }
 
+        public int GetIdByNom(string prenom,string mdp)
+        {
+            List<int> ids = new List<int>();
+            using (MySqlConnection cnx = DaoConnection.getConnection())
+            {
+                cnx.Open();
+                using (MySqlCommand cmd = new MySqlCommand("select id from user where prenom=@prenom and mdp=@mdp;", cnx))
+                {
+                    cmd.Parameters.Add(new MySqlParameter("@prenom", prenom));
+                    cmd.Parameters.Add(new MySqlParameter("@mdp", mdp));
+                    using (MySqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read()) 
+                        { 
+                            ids.Add(Convert.ToInt32(rdr["id"])); 
+                        }
+                        rdr.Close();
+                    }
+                }
+                cnx.Close();
+            }
+            return ids[0];
+        }
+
 
     }
 }

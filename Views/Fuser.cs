@@ -16,20 +16,10 @@ namespace Views
     {
         DaoUser daoUser = new DaoUser();
         DaoCours daoCours = new DaoCours();
-        public FUser(bool admin)
+        public FUser()
         {
             InitializeComponent();
-            if (admin == false)
-            {
-                this.btnAjouterUser.Enabled = false;
-                this.btnAjouterUser.Visible = false;
-
-                this.btnSuppimerUser.Enabled = false;
-                this.btnSuppimerUser.Visible = false;
-
-                this.btnRafraichir.Enabled = false;
-                this.btnRafraichir.Visible = false;
-            }
+            
             this.load();
             this.btnSuppimerUser.Click += BtnSuppimerUser_Click;
             this.btnAjouterUser.Click += BtnAjouterUser_Click;

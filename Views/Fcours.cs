@@ -16,9 +16,25 @@ namespace Views
     {
         DaoCours daoCours = new DaoCours();
         DaoEleve daoEleve = new DaoEleve();
-        public FCours()
+        public FCours(bool admin,int idUser)
         {
             InitializeComponent();
+            if (admin == false)
+            {
+                this.btnAjouter.Enabled = false;
+                this.btnAjouter.Visible = false;
+
+                this.btnSupprimer.Enabled = false;
+                this.btnSupprimer.Visible = false;
+
+                this.btnModifier.Enabled = false;
+                this.btnModifier.Visible = false;
+
+                this.btnCharger.Enabled = false;
+                this.btnCharger.Visible = false;
+                this.tbIdUser.Text=idUser.ToString();
+            }
+            this.tbAdmin.Text = admin.ToString();
             this.load();
             this.btnAjouter.Click += BtnAjouter_Click;
             this.btnModifier.Click += BtnModifier_Click;
@@ -33,7 +49,8 @@ namespace Views
             {
                 Cours cours = (Cours)this.lbCours.SelectedItem;
                 int id = cours.Id;
-                FVoirCours fVoirCours = new FVoirCours(id);
+                bool admin = Convert.ToBoolean(tbAdmin.Text);
+                FVoirCours fVoirCours = new FVoirCours(id,admin);
                 fVoirCours.Show();
             }
         }
@@ -72,12 +89,26 @@ namespace Views
 
         public void load()
         {
-            lbCours.Items.Clear();
-            List<Cours> cours = daoCours.GetAll();
-            foreach (Cours c in cours)
+            bool admin = Convert.ToBoolean(tbAdmin.Text);
+            if (admin)
             {
-                lbCours.Items.Add(c);
+                lbCours.Items.Clear();
+                List<Cours> cours = daoCours.GetAll();
+                foreach (Cours c in cours)
+                {
+                    lbCours.Items.Add(c);
+                }
             }
+            else
+            {
+                lbCours.Items.Clear();
+                List<Cours> cours = daoCours.GetCoursByUser(Convert.ToInt32(this.tbIdUser.Text));
+                foreach (Cours c in cours)
+                {
+                    lbCours.Items.Add(c);
+                }
+            }
+            
         }
 
     }

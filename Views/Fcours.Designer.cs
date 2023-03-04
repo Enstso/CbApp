@@ -35,6 +35,8 @@
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnCharger = new System.Windows.Forms.Button();
+            this.tbAdmin = new System.Windows.Forms.TextBox();
+            this.tbIdUser = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbCours
@@ -58,7 +60,7 @@
             // 
             // btnVoirEleves
             // 
-            this.btnVoirEleves.Location = new System.Drawing.Point(340, 445);
+            this.btnVoirEleves.Location = new System.Drawing.Point(312, 371);
             this.btnVoirEleves.Name = "btnVoirEleves";
             this.btnVoirEleves.Size = new System.Drawing.Size(160, 48);
             this.btnVoirEleves.TabIndex = 2;
@@ -67,7 +69,7 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(245, 377);
+            this.btnModifier.Location = new System.Drawing.Point(227, 432);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(160, 48);
             this.btnModifier.TabIndex = 3;
@@ -76,7 +78,7 @@
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(440, 377);
+            this.btnSupprimer.Location = new System.Drawing.Point(422, 432);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(160, 48);
             this.btnSupprimer.TabIndex = 4;
@@ -85,7 +87,7 @@
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(40, 377);
+            this.btnAjouter.Location = new System.Drawing.Point(22, 432);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(160, 48);
             this.btnAjouter.TabIndex = 5;
@@ -94,18 +96,36 @@
             // 
             // btnCharger
             // 
-            this.btnCharger.Location = new System.Drawing.Point(628, 377);
+            this.btnCharger.Location = new System.Drawing.Point(610, 432);
             this.btnCharger.Name = "btnCharger";
             this.btnCharger.Size = new System.Drawing.Size(160, 48);
             this.btnCharger.TabIndex = 6;
             this.btnCharger.Text = "Charger";
             this.btnCharger.UseVisualStyleBackColor = true;
             // 
+            // tbAdmin
+            // 
+            this.tbAdmin.Location = new System.Drawing.Point(3, 486);
+            this.tbAdmin.Name = "tbAdmin";
+            this.tbAdmin.Size = new System.Drawing.Size(100, 22);
+            this.tbAdmin.TabIndex = 7;
+            this.tbAdmin.Visible = false;
+            // 
+            // tbIdUser
+            // 
+            this.tbIdUser.Location = new System.Drawing.Point(22, 486);
+            this.tbIdUser.Name = "tbIdUser";
+            this.tbIdUser.Size = new System.Drawing.Size(100, 22);
+            this.tbIdUser.TabIndex = 8;
+            this.tbIdUser.Visible = false;
+            // 
             // FCours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 505);
+            this.Controls.Add(this.tbIdUser);
+            this.Controls.Add(this.tbAdmin);
             this.Controls.Add(this.btnCharger);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.btnSupprimer);
@@ -129,5 +149,7 @@
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnCharger;
+        private System.Windows.Forms.TextBox tbAdmin;
+        private System.Windows.Forms.TextBox tbIdUser;
     }
 }
