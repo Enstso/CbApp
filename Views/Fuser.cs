@@ -16,15 +16,18 @@ namespace Views
     {
         DaoUser daoUser = new DaoUser();
         DaoCours daoCours = new DaoCours();
-        public FUser()
+        private string identity;
+        public FUser(string identity)
         {
             InitializeComponent();
             
-            this.load();
+            this.Load();
             this.btnSuppimerUser.Click += BtnSuppimerUser_Click;
             this.btnAjouterUser.Click += BtnAjouterUser_Click;
             this.btnRafraichir.Click += BtnRafraichir_Click;
             this.btnVoirCours.Click += BtnVoirCours_Click;
+            this.identity = identity;
+            this.lbluser.Text = identity;
         }
 
         private void BtnVoirCours_Click(object sender, EventArgs e)
@@ -33,21 +36,21 @@ namespace Views
             {
                 User user = (User)this.lbUsers.SelectedItem;
                 int id = user.Id;
-                FVoir fVoir = new FVoir(daoCours.GetCoursByUser(id));
+                FVoir fVoir = new FVoir(daoCours.GetCoursByUser(id),this.identity);
                 fVoir.Show();
             }
         }
 
         private void BtnRafraichir_Click(object sender, EventArgs e)
         {
-            this.load();
+            this.Load();
         }
 
         private void BtnAjouterUser_Click(object sender, EventArgs e)
         {
             FNewUser Fuser = new FNewUser();
             Fuser.Show();
-            this.load();
+            this.Load();
         }
 
         private void BtnSuppimerUser_Click(object sender, EventArgs e)
@@ -56,12 +59,12 @@ namespace Views
             {
                 User user = (User)this.lbUsers.SelectedItem;
                 int id = user.Id;
-                daoUser.delete(id);
+                daoUser.Delete(id);
             }
-            this.load();
+            this.Load();
         }
 
-        public void load()
+        public new void Load()
         {
             this.lbUsers.Items.Clear();
             List<User> users = daoUser.GetAll();

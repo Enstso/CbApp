@@ -23,6 +23,12 @@ namespace Model
             this.admin = admin;
         }
 
+        public User(string nom, string prenom)
+        {
+            this.nom = nom;
+            this.prenom = prenom;
+            
+        }
         public User(string nom,string prenom, string mdp, bool admin)
         {
             this.nom = nom;
@@ -42,5 +48,9 @@ namespace Model
             return string.Format("User {0} {1}", this.nom,this.prenom);
         }
 
+        public string Identity()
+        {
+            return string.Format("{0} {1}", this.nom, this.prenom);
+        }
     }
 }

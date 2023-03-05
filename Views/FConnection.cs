@@ -14,28 +14,36 @@ namespace Views
 {
     public partial class FConnection : Form
     {
-        DaoUser daoUser = new DaoUser();
+        private DaoUser daoUser = new DaoUser();
+        private User user;
+        private string identity;
         public FConnection()
         {
             InitializeComponent();
             this.btnConnect.Click += BtnConnect_Click;
+           
         }
 
         private void BtnConnect_Click(object sender, EventArgs e)
         {
-            if(this.tbMdp.Text != "" && this.tbPrenom.Text != "")
+            this.user = daoUser.GetPerson(this.tbPrenom.Text);
+             this.identity = this.user.Identity();
+
+            if (this.tbMdp.Text != "" && this.tbPrenom.Text != "")
             {
                 if (daoUser.Authentification(this.tbPrenom.Text,this.tbMdp.Text)) {
-                    if (daoUser.isAdmin(this.tbPrenom.Text, this.tbMdp.Text))
+                    if (daoUser.IsAdmin(this.tbPrenom.Text, this.tbMdp.Text))
                     {
-                        FMainAdmin fmainAdmin = new FMainAdmin();
+                        FMainAdmin fmainAdmin = new FMainAdmin(this.identity);
+                        
                         fmainAdmin.Show();
                         this.Opacity = 0;
                     }
                     else
                     {
                         int id = daoUser.GetIdByNom(this.tbPrenom.Text, this.tbMdp.Text);
-                        FCours fmain = new FCours(false,id);
+                        FCours fmain = new FCours(false,id,this.identity);
+                        this.user = daoUser.GetPerson(this.tbPrenom.Text);
                         fmain.Show();
                         this.Opacity = 0;
                     }
@@ -50,5 +58,14 @@ namespace Views
                 MessageBox.Show("Veuillez remplir tous les champs !");
             }
         }
+        public User GetUser
+        {
+            get
+            {
+                return this.user;
+            }
+        }
     }
+
+    
 }

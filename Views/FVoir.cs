@@ -14,9 +14,10 @@ namespace Views
 {
     public partial class FVoir : Form
     {
-        public FVoir(List<Cours> cours)
+        public FVoir(List<Cours> cours,string identity)
         {
             InitializeComponent();
+            this.lbluser.Text = identity;
             List<Cours> liste = cours;
             foreach (Cours c in liste)
             {

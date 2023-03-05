@@ -21,6 +21,7 @@ namespace Views
             InitializeComponent();
             this.tbId.Visible = false;
             this.tbId.Enabled = false;
+
             this.btnValider.Click += BtnValider_Click;
             this.Text = "Ajouter";
         }
@@ -39,9 +40,7 @@ namespace Views
         public FNewEleves(Eleve eleve)
         {
             InitializeComponent();
-            this.tbId.Visible = false;
-            this.tbId.Enabled = false;
-            this.tbId.Text = eleve.Id.ToString();
+            
             this.tbNom.Text = eleve.Nom;
             this.tbPrenom.Text = eleve.Prenom;
             this.tbMail.Text = eleve.Mail;

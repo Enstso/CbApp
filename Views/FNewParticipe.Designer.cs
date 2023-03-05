@@ -29,6 +29,7 @@ namespace Views
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FNewParticipe));
             this.cbEleve = new System.Windows.Forms.ComboBox();
             this.lblEleve = new System.Windows.Forms.Label();
             this.btnValider = new System.Windows.Forms.Button();
@@ -39,46 +40,58 @@ namespace Views
             // 
             this.cbEleve.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEleve.FormattingEnabled = true;
-            this.cbEleve.Location = new System.Drawing.Point(160, 76);
+            this.cbEleve.Location = new System.Drawing.Point(77, 83);
+            this.cbEleve.Margin = new System.Windows.Forms.Padding(2);
             this.cbEleve.Name = "cbEleve";
-            this.cbEleve.Size = new System.Drawing.Size(232, 24);
+            this.cbEleve.Size = new System.Drawing.Size(175, 21);
             this.cbEleve.TabIndex = 1;
             // 
             // lblEleve
             // 
             this.lblEleve.AutoSize = true;
-            this.lblEleve.Location = new System.Drawing.Point(43, 76);
+            this.lblEleve.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEleve.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblEleve.Location = new System.Drawing.Point(73, 62);
+            this.lblEleve.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEleve.Name = "lblEleve";
-            this.lblEleve.Size = new System.Drawing.Size(51, 17);
+            this.lblEleve.Size = new System.Drawing.Size(53, 19);
             this.lblEleve.TabIndex = 2;
             this.lblEleve.Text = "Eleve :";
             // 
             // btnValider
             // 
-            this.btnValider.Location = new System.Drawing.Point(160, 151);
+            this.btnValider.BackColor = System.Drawing.Color.DarkGray;
+            this.btnValider.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValider.ForeColor = System.Drawing.Color.White;
+            this.btnValider.Location = new System.Drawing.Point(77, 121);
+            this.btnValider.Margin = new System.Windows.Forms.Padding(2);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(75, 23);
+            this.btnValider.Size = new System.Drawing.Size(175, 27);
             this.btnValider.TabIndex = 3;
             this.btnValider.Text = "Valider";
-            this.btnValider.UseVisualStyleBackColor = true;
+            this.btnValider.UseVisualStyleBackColor = false;
             // 
             // tbIdCours
             // 
-            this.tbIdCours.Location = new System.Drawing.Point(190, 22);
+            this.tbIdCours.Location = new System.Drawing.Point(77, 29);
+            this.tbIdCours.Margin = new System.Windows.Forms.Padding(2);
             this.tbIdCours.Name = "tbIdCours";
-            this.tbIdCours.Size = new System.Drawing.Size(100, 22);
+            this.tbIdCours.Size = new System.Drawing.Size(76, 20);
             this.tbIdCours.TabIndex = 4;
             this.tbIdCours.Visible = false;
             // 
             // FNewParticipe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 215);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(356, 175);
             this.Controls.Add(this.tbIdCours);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.lblEleve);
             this.Controls.Add(this.cbEleve);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FNewParticipe";
             this.Text = "FNewParticipe";
             this.ResumeLayout(false);

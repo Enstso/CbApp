@@ -59,7 +59,7 @@ namespace Dao
             return result;
         }
 
-        public bool isAdmin(string prenom,string mdp)
+        public bool IsAdmin(string prenom,string mdp)
         {
             bool result = false;
             using (MySqlConnection cnx = DaoConnection.getConnection())
@@ -125,7 +125,7 @@ namespace Dao
             throw new Exception("Aucun user dans la table");
         }
 
-        public void delete(int id)
+        public void Delete(int id)
         {
             using (MySqlConnection cnx = DaoConnection.getConnection())
             {
@@ -163,6 +163,30 @@ namespace Dao
             return ids[0];
         }
 
-
+        public User GetPerson(string prenom)
+        {
+            
+            User user=null;
+            using (MySqlConnection cnx = DaoConnection.getConnection())
+            {
+                cnx.Open();
+                using (MySqlCommand cmd = new MySqlCommand("select nom,prenom from user where prenom=@prenom;", cnx))
+                {
+                    cmd.Parameters.Add(new MySqlParameter("@prenom", prenom));
+                    
+                    using (MySqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        
+                        while (rdr.Read())
+                        {
+                            user = new User(Convert.ToString(rdr["nom"]), Convert.ToString(rdr["prenom"]));
+                        }
+                        rdr.Close();
+                    }
+                }
+                cnx.Close();
+            }
+            return user;
+        }
     }
 }

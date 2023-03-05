@@ -16,8 +16,8 @@ namespace Views
     {
         DaoCours daoCours = new DaoCours();
         DaoEleve daoEleve = new DaoEleve();
-
-        public FEleves()
+        private string identity;
+        public FEleves(string identity)
         {
             InitializeComponent();
             this.load();
@@ -26,6 +26,8 @@ namespace Views
             this.btnSupprimer.Click += BtnSupprimer_Click;
             this.btnModifier.Click += BtnModifier_Click;
             this.btnVoirCours.Click += BtnVoirCours_Click;
+            this.identity = identity;
+            this.lbluser.Text = this.identity; 
         }
 
         private void BtnVoirCours_Click(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace Views
                 Eleve eleve = (Eleve)lbEleves.SelectedItem;
                 int id = eleve.Id;
                 List<Cours> cours = daoCours.GetCoursByEleve(id);
-                FVoir fVoir = new FVoir(cours);
+                FVoir fVoir = new FVoir(cours,this.identity);
                 fVoir.Show();
             }
         }
@@ -79,6 +81,7 @@ namespace Views
             foreach (Eleve e in eleves)
             {
                 lbEleves.Items.Add(e);
+                
             }
         }
 

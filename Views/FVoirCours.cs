@@ -16,7 +16,7 @@ namespace Views
     {
         DaoEleve daoEleve = new DaoEleve();
         DaoParticipe daoParticipe = new DaoParticipe();
-        public FVoirCours(int idCours,bool admin)
+        public FVoirCours(int idCours,bool admin,string identity)
         {
             InitializeComponent();
             if (admin == false)
@@ -35,6 +35,7 @@ namespace Views
             this.btnAjouter.Click += BtnAjouter_Click;
             this.btnSupprimer.Click += BtnSupprimer_Click;
             this.btnRafraichir.Click += BtnRafraichir_Click;
+            this.lbluser.Text = identity;
         }
 
         

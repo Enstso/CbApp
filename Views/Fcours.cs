@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,11 +17,18 @@ namespace Views
     {
         DaoCours daoCours = new DaoCours();
         DaoEleve daoEleve = new DaoEleve();
-        public FCours(bool admin,int idUser)
+        private string identity;
+        
+        public FCours(bool admin,int idUser,string identity)
         {
+            
             InitializeComponent();
+            this.identity = identity;
+            this.lbluser.Text = this.identity;
+
             if (admin == false)
             {
+                
                 this.btnAjouter.Enabled = false;
                 this.btnAjouter.Visible = false;
 
@@ -33,6 +41,8 @@ namespace Views
                 this.btnCharger.Enabled = false;
                 this.btnCharger.Visible = false;
                 this.tbIdUser.Text=idUser.ToString();
+                this.FormClosed += FCours_FormClosed;
+                
             }
             this.tbAdmin.Text = admin.ToString();
             this.load();
@@ -43,6 +53,11 @@ namespace Views
             this.btnVoirEleves.Click += BtnVoirEleves_Click;
         }
 
+        private void FCours_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void BtnVoirEleves_Click(object sender, EventArgs e)
         {
             if (lbCours.SelectedIndex != -1)
@@ -50,7 +65,7 @@ namespace Views
                 Cours cours = (Cours)this.lbCours.SelectedItem;
                 int id = cours.Id;
                 bool admin = Convert.ToBoolean(tbAdmin.Text);
-                FVoirCours fVoirCours = new FVoirCours(id,admin);
+                FVoirCours fVoirCours = new FVoirCours(id,admin,this.identity);
                 fVoirCours.Show();
             }
         }
