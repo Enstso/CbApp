@@ -15,8 +15,8 @@ namespace Views
 {
     public partial class FCours : Form
     {
-        DaoCours daoCours = new DaoCours();
-        DaoEleve daoEleve = new DaoEleve();
+        private DaoCours daoCours = new DaoCours();
+        private DaoEleve daoEleve = new DaoEleve();
         private string identity;
         
         public FCours(bool admin,int idUser,string identity)
@@ -102,7 +102,7 @@ namespace Views
             fNewCours.Show();
         }
 
-        public void load()
+        private void load()
         {
             bool admin = Convert.ToBoolean(tbAdmin.Text);
             if (admin)

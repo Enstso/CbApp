@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCours));
             this.lbCours = new System.Windows.Forms.ListBox();
             this.lblProchainCours = new System.Windows.Forms.Label();
             this.btnVoirEleves = new System.Windows.Forms.Button();
@@ -208,6 +209,7 @@
             this.Controls.Add(this.btnVoirEleves);
             this.Controls.Add(this.lblProchainCours);
             this.Controls.Add(this.lbCours);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FCours";
             this.Text = "Fcours";

@@ -14,7 +14,7 @@ namespace Views
 {
     public partial class FNewUser : Form
     {
-        DaoUser daoUser = new DaoUser();
+        private DaoUser daoUser = new DaoUser();
         public FNewUser()
         {
             InitializeComponent();

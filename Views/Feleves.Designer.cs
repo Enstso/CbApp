@@ -40,6 +40,7 @@
             this.lbluser = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btneleve = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -173,12 +174,25 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // btneleve
+            // 
+            this.btneleve.BackColor = System.Drawing.Color.DarkGray;
+            this.btneleve.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneleve.ForeColor = System.Drawing.Color.White;
+            this.btneleve.Location = new System.Drawing.Point(499, 262);
+            this.btneleve.Name = "btneleve";
+            this.btneleve.Size = new System.Drawing.Size(101, 41);
+            this.btneleve.TabIndex = 16;
+            this.btneleve.Text = "L\'élève";
+            this.btneleve.UseVisualStyleBackColor = false;
+            // 
             // FEleves
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(600, 407);
+            this.Controls.Add(this.btneleve);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCharger);
@@ -215,5 +229,6 @@
         private System.Windows.Forms.Label lbluser;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btneleve;
     }
 }

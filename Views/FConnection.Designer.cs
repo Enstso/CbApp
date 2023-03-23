@@ -55,6 +55,7 @@
             this.tbMdp.Location = new System.Drawing.Point(92, 205);
             this.tbMdp.Margin = new System.Windows.Forms.Padding(2);
             this.tbMdp.Name = "tbMdp";
+            this.tbMdp.PasswordChar = '*';
             this.tbMdp.Size = new System.Drawing.Size(256, 26);
             this.tbMdp.TabIndex = 1;
             // 

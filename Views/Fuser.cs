@@ -14,8 +14,8 @@ namespace Views
 {
     public partial class FUser : Form
     {
-        DaoUser daoUser = new DaoUser();
-        DaoCours daoCours = new DaoCours();
+        private DaoUser daoUser = new DaoUser();
+        private DaoCours daoCours = new DaoCours();
         private string identity;
         public FUser(string identity)
         {
@@ -64,7 +64,7 @@ namespace Views
             this.Load();
         }
 
-        public new void Load()
+        private void Load()
         {
             this.lbUsers.Items.Clear();
             List<User> users = daoUser.GetAll();

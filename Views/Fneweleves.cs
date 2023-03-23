@@ -14,7 +14,7 @@ namespace Views
 {
     public partial class FNewEleves : Form
     {
-        DaoEleve daoEleve = new DaoEleve();
+        private DaoEleve daoEleve = new DaoEleve();
 
         public FNewEleves()
         {

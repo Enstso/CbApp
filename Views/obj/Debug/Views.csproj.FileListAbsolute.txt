@@ -67,3 +67,4 @@ D:\C#\App-Cabinet-Action\Views\bin\Debug\BouncyCastle.Crypto.dll
 D:\C#\App-Cabinet-Action\Views\bin\Debug\K4os.Compression.LZ4.dll
 D:\C#\App-Cabinet-Action\Views\bin\Debug\K4os.Hash.xxHash.dll
 D:\C#\App-Cabinet-Action\Views\bin\Debug\MySql.Data.xml
+D:\C#\App-Cabinet-Action\Views\obj\Debug\Views.Ffiche.resources

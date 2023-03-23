@@ -14,8 +14,9 @@ namespace Views
 {
     public partial class FVoirCours : Form
     {
-        DaoEleve daoEleve = new DaoEleve();
-        DaoParticipe daoParticipe = new DaoParticipe();
+        private DaoEleve daoEleve = new DaoEleve();
+        private DaoParticipe daoParticipe = new DaoParticipe();
+        private string identity;
         public FVoirCours(int idCours,bool admin,string identity)
         {
             InitializeComponent();
@@ -35,10 +36,20 @@ namespace Views
             this.btnAjouter.Click += BtnAjouter_Click;
             this.btnSupprimer.Click += BtnSupprimer_Click;
             this.btnRafraichir.Click += BtnRafraichir_Click;
-            this.lbluser.Text = identity;
+            this.identity = identity;
+            this.lbluser.Text = this.identity;
+            this.btneleve.Click += Btneleve_Click;
         }
 
-        
+        private void Btneleve_Click(object sender, EventArgs e)
+        {
+            try { 
+            Eleve eleve=(Eleve)lbEleves.SelectedItem;
+            Ffiche ffiche = new Ffiche(this.identity,eleve);
+            ffiche.Show();
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+        }
 
         private void BtnRafraichir_Click(object sender, EventArgs e)
         {

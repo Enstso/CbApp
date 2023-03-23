@@ -14,8 +14,8 @@ namespace Views
 {
     public partial class FNewCours : Form
     {
-        DaoCours daoCours = new DaoCours();
-        DaoUser daoUser = new DaoUser();
+        private DaoCours daoCours = new DaoCours();
+        private DaoUser daoUser = new DaoUser();
 
         public FNewCours()
         {
@@ -72,7 +72,7 @@ namespace Views
             }
         }
 
-        public void loadComboBox()
+        private void loadComboBox()
         {
             List<User> users = daoUser.GetAll();
             foreach (User u in users)

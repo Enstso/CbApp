@@ -13,7 +13,6 @@ namespace Model
         private string prenom;
         private string mail;
         private string telephone;
-        //private int idCours;
 
         public Eleve(int id, string nom, string prenom, string mail, string telephone)
         {
@@ -22,7 +21,6 @@ namespace Model
             this.prenom = prenom;
             this.mail = mail;
             this.telephone = telephone;
-            //this.idCours = idCours;
         }
 
         public Eleve(string nom, string prenom, string mail, string telephone)
@@ -31,7 +29,6 @@ namespace Model
             this.prenom = prenom;
             this.mail = mail;
             this.telephone = telephone;
-            //this.idCours = idCours;
         }
 
         public int Id { get { return this.id; } }
@@ -39,7 +36,6 @@ namespace Model
         public string Prenom { get { return this.prenom; } set { this.prenom = value; } }
         public string Mail { get { return this.mail; } set { this.mail = value; } }
         public string Telephone { get { return this.telephone; } set { this.telephone = value; } }
-        //public int IdCours { get { return this.idCours; } set { this.idCours = value; } }
 
         public override string ToString()
         {

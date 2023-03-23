@@ -14,8 +14,8 @@ namespace Views
 {
     public partial class FEleves : Form
     {
-        DaoCours daoCours = new DaoCours();
-        DaoEleve daoEleve = new DaoEleve();
+        private DaoCours daoCours = new DaoCours();
+        private DaoEleve daoEleve = new DaoEleve();
         private string identity;
         public FEleves(string identity)
         {
@@ -27,61 +27,90 @@ namespace Views
             this.btnModifier.Click += BtnModifier_Click;
             this.btnVoirCours.Click += BtnVoirCours_Click;
             this.identity = identity;
-            this.lbluser.Text = this.identity; 
+            this.lbluser.Text = this.identity;
+            this.btneleve.Click += Btneleve_Click;
+        }
+
+        private void Btneleve_Click(object sender, EventArgs e)
+        {
+            try { 
+            Eleve eleve = (Eleve)lbEleves.SelectedItem;
+            Ffiche ffiche = new Ffiche(this.identity, eleve);
+            ffiche.Show();
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message ); }
         }
 
         private void BtnVoirCours_Click(object sender, EventArgs e)
         {
-            if (lbEleves.SelectedIndex != -1)
+            try
             {
                 Eleve eleve = (Eleve)lbEleves.SelectedItem;
                 int id = eleve.Id;
                 List<Cours> cours = daoCours.GetCoursByEleve(id);
-                FVoir fVoir = new FVoir(cours,this.identity);
+                FVoir fVoir = new FVoir(cours, this.identity);
                 fVoir.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void BtnModifier_Click(object sender, EventArgs e)
         {
-            if (lbEleves.SelectedIndex != -1)
+            try
             {
                 Eleve eleve = (Eleve)this.lbEleves.SelectedItem;
                 FNewEleves fNewEleves = new FNewEleves(eleve);
                 fNewEleves.Show();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void BtnSupprimer_Click(object sender, EventArgs e)
         {
-            if (lbEleves.SelectedIndex != -1)
+            try
             {
                 Eleve eleve = (Eleve)this.lbEleves.SelectedItem;
                 int id = eleve.Id;
                 daoEleve.delete(id);
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
             this.load();
         }
 
         private void BtnAjouter_Click(object sender, EventArgs e)
         {
-            FNewEleves fNewEleves = new FNewEleves();
-            fNewEleves.Show();
+            try
+            {
+                FNewEleves fNewEleves = new FNewEleves();
+                fNewEleves.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
+
 
         private void BtnCharger_Click(object sender, EventArgs e)
         {
             this.load();
         }
 
-        public void load()
+        private void load()
         {
             lbEleves.Items.Clear();
             List<Eleve> eleves = daoEleve.GetAll();
             foreach (Eleve e in eleves)
             {
                 lbEleves.Items.Add(e);
-                
+
             }
         }
 

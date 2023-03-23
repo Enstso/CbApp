@@ -71,6 +71,12 @@
     <Compile Include="FEleves.Designer.cs">
       <DependentUpon>FEleves.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ffiche.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ffiche.Designer.cs">
+      <DependentUpon>Ffiche.cs</DependentUpon>
+    </Compile>
     <Compile Include="FMainAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FEleves.resx">
       <DependentUpon>FEleves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ffiche.resx">
+      <DependentUpon>Ffiche.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMainAdmin.resx">
       <DependentUpon>FMainAdmin.cs</DependentUpon>
