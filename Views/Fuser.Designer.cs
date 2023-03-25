@@ -39,7 +39,6 @@
             this.lbluser = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,7 +75,7 @@
             this.btnAjouterUser.Location = new System.Drawing.Point(0, 0);
             this.btnAjouterUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjouterUser.Name = "btnAjouterUser";
-            this.btnAjouterUser.Size = new System.Drawing.Size(193, 97);
+            this.btnAjouterUser.Size = new System.Drawing.Size(193, 119);
             this.btnAjouterUser.TabIndex = 2;
             this.btnAjouterUser.Text = "Ajouter";
             this.btnAjouterUser.UseVisualStyleBackColor = false;
@@ -86,10 +85,10 @@
             this.btnSuppimerUser.BackColor = System.Drawing.Color.DarkGray;
             this.btnSuppimerUser.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuppimerUser.ForeColor = System.Drawing.Color.White;
-            this.btnSuppimerUser.Location = new System.Drawing.Point(0, 165);
+            this.btnSuppimerUser.Location = new System.Drawing.Point(0, 113);
             this.btnSuppimerUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuppimerUser.Name = "btnSuppimerUser";
-            this.btnSuppimerUser.Size = new System.Drawing.Size(193, 92);
+            this.btnSuppimerUser.Size = new System.Drawing.Size(193, 99);
             this.btnSuppimerUser.TabIndex = 3;
             this.btnSuppimerUser.Text = "Supprimer";
             this.btnSuppimerUser.UseVisualStyleBackColor = false;
@@ -99,10 +98,10 @@
             this.btnRafraichir.BackColor = System.Drawing.Color.DarkGray;
             this.btnRafraichir.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRafraichir.ForeColor = System.Drawing.Color.White;
-            this.btnRafraichir.Location = new System.Drawing.Point(0, 327);
+            this.btnRafraichir.Location = new System.Drawing.Point(0, 312);
             this.btnRafraichir.Margin = new System.Windows.Forms.Padding(2);
             this.btnRafraichir.Name = "btnRafraichir";
-            this.btnRafraichir.Size = new System.Drawing.Size(193, 85);
+            this.btnRafraichir.Size = new System.Drawing.Size(193, 100);
             this.btnRafraichir.TabIndex = 4;
             this.btnRafraichir.Text = "Charger";
             this.btnRafraichir.UseVisualStyleBackColor = false;
@@ -112,10 +111,10 @@
             this.btnVoirCours.BackColor = System.Drawing.Color.DarkGray;
             this.btnVoirCours.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoirCours.ForeColor = System.Drawing.Color.White;
-            this.btnVoirCours.Location = new System.Drawing.Point(0, 252);
+            this.btnVoirCours.Location = new System.Drawing.Point(0, 207);
             this.btnVoirCours.Margin = new System.Windows.Forms.Padding(2);
             this.btnVoirCours.Name = "btnVoirCours";
-            this.btnVoirCours.Size = new System.Drawing.Size(193, 81);
+            this.btnVoirCours.Size = new System.Drawing.Size(193, 106);
             this.btnVoirCours.TabIndex = 5;
             this.btnVoirCours.Text = "Voir Les cours de l\'user";
             this.btnVoirCours.UseVisualStyleBackColor = false;
@@ -159,25 +158,12 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkGray;
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 87);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Modifier";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // FUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(600, 411);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnVoirCours);
@@ -211,6 +197,5 @@
         private System.Windows.Forms.Label lbluser;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -36,6 +36,8 @@
             this.lblNom = new System.Windows.Forms.Label();
             this.lblPrenom = new System.Windows.Forms.Label();
             this.lblMdp = new System.Windows.Forms.Label();
+            this.lblverif = new System.Windows.Forms.Label();
+            this.tbVerif = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnValider
@@ -43,7 +45,7 @@
             this.btnValider.BackColor = System.Drawing.Color.DarkGray;
             this.btnValider.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.White;
-            this.btnValider.Location = new System.Drawing.Point(127, 187);
+            this.btnValider.Location = new System.Drawing.Point(127, 195);
             this.btnValider.Margin = new System.Windows.Forms.Padding(2);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(202, 29);
@@ -53,7 +55,7 @@
             // 
             // tbNom
             // 
-            this.tbNom.Location = new System.Drawing.Point(127, 44);
+            this.tbNom.Location = new System.Drawing.Point(126, 31);
             this.tbNom.Margin = new System.Windows.Forms.Padding(2);
             this.tbNom.Name = "tbNom";
             this.tbNom.Size = new System.Drawing.Size(202, 20);
@@ -61,7 +63,7 @@
             // 
             // tbPrenom
             // 
-            this.tbPrenom.Location = new System.Drawing.Point(127, 87);
+            this.tbPrenom.Location = new System.Drawing.Point(126, 74);
             this.tbPrenom.Margin = new System.Windows.Forms.Padding(2);
             this.tbPrenom.Name = "tbPrenom";
             this.tbPrenom.Size = new System.Drawing.Size(202, 20);
@@ -69,18 +71,19 @@
             // 
             // tbMdp
             // 
-            this.tbMdp.Location = new System.Drawing.Point(127, 143);
+            this.tbMdp.Location = new System.Drawing.Point(125, 117);
             this.tbMdp.Margin = new System.Windows.Forms.Padding(2);
             this.tbMdp.Name = "tbMdp";
             this.tbMdp.Size = new System.Drawing.Size(202, 20);
             this.tbMdp.TabIndex = 3;
+            this.tbMdp.UseSystemPasswordChar = true;
             // 
             // lblNom
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNom.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblNom.Location = new System.Drawing.Point(124, 22);
+            this.lblNom.Location = new System.Drawing.Point(123, 9);
             this.lblNom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(46, 19);
@@ -92,7 +95,7 @@
             this.lblPrenom.AutoSize = true;
             this.lblPrenom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrenom.ForeColor = System.Drawing.Color.Silver;
-            this.lblPrenom.Location = new System.Drawing.Point(124, 66);
+            this.lblPrenom.Location = new System.Drawing.Point(123, 53);
             this.lblPrenom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrenom.Name = "lblPrenom";
             this.lblPrenom.Size = new System.Drawing.Size(67, 19);
@@ -104,12 +107,33 @@
             this.lblMdp.AutoSize = true;
             this.lblMdp.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMdp.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblMdp.Location = new System.Drawing.Point(124, 122);
+            this.lblMdp.Location = new System.Drawing.Point(123, 96);
             this.lblMdp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMdp.Name = "lblMdp";
             this.lblMdp.Size = new System.Drawing.Size(104, 19);
             this.lblMdp.TabIndex = 6;
             this.lblMdp.Text = "Mot de Passe ";
+            // 
+            // lblverif
+            // 
+            this.lblverif.AutoSize = true;
+            this.lblverif.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblverif.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblverif.Location = new System.Drawing.Point(122, 139);
+            this.lblverif.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblverif.Name = "lblverif";
+            this.lblverif.Size = new System.Drawing.Size(191, 19);
+            this.lblverif.TabIndex = 8;
+            this.lblverif.Text = "Comfirmer le mot de passe";
+            // 
+            // tbVerif
+            // 
+            this.tbVerif.Location = new System.Drawing.Point(125, 160);
+            this.tbVerif.Margin = new System.Windows.Forms.Padding(2);
+            this.tbVerif.Name = "tbVerif";
+            this.tbVerif.Size = new System.Drawing.Size(202, 20);
+            this.tbVerif.TabIndex = 7;
+            this.tbVerif.UseSystemPasswordChar = true;
             // 
             // FNewUser
             // 
@@ -117,6 +141,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(424, 245);
+            this.Controls.Add(this.lblverif);
+            this.Controls.Add(this.tbVerif);
             this.Controls.Add(this.lblMdp);
             this.Controls.Add(this.lblPrenom);
             this.Controls.Add(this.lblNom);
@@ -128,6 +154,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FNewUser";
             this.Text = "Ajout User";
+            this.Load += new System.EventHandler(this.FNewUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +169,7 @@
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblPrenom;
         private System.Windows.Forms.Label lblMdp;
+        private System.Windows.Forms.Label lblverif;
+        private System.Windows.Forms.TextBox tbVerif;
     }
 }

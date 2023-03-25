@@ -37,26 +37,27 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.lblErreurConnection = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbmdp = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbPrenom
             // 
-            this.tbPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPrenom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPrenom.Location = new System.Drawing.Point(92, 123);
             this.tbPrenom.Margin = new System.Windows.Forms.Padding(2);
             this.tbPrenom.Name = "tbPrenom";
-            this.tbPrenom.Size = new System.Drawing.Size(256, 26);
+            this.tbPrenom.Size = new System.Drawing.Size(256, 27);
             this.tbPrenom.TabIndex = 0;
             // 
             // tbMdp
             // 
-            this.tbMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMdp.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMdp.Location = new System.Drawing.Point(92, 205);
             this.tbMdp.Margin = new System.Windows.Forms.Padding(2);
             this.tbMdp.Name = "tbMdp";
             this.tbMdp.PasswordChar = '*';
-            this.tbMdp.Size = new System.Drawing.Size(256, 26);
+            this.tbMdp.Size = new System.Drawing.Size(256, 27);
             this.tbMdp.TabIndex = 1;
             // 
             // lblTitre
@@ -131,12 +132,25 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // cbmdp
+            // 
+            this.cbmdp.AutoSize = true;
+            this.cbmdp.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmdp.Location = new System.Drawing.Point(92, 242);
+            this.cbmdp.Name = "cbmdp";
+            this.cbmdp.Size = new System.Drawing.Size(138, 17);
+            this.cbmdp.TabIndex = 8;
+            this.cbmdp.Text = "Afficher le mot de passe";
+            this.cbmdp.UseVisualStyleBackColor = true;
+            this.cbmdp.CheckedChanged += new System.EventHandler(this.cbmdp_CheckedChanged);
+            // 
             // FConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(447, 324);
+            this.Controls.Add(this.cbmdp);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblErreurConnection);
             this.Controls.Add(this.btnConnect);
@@ -165,5 +179,6 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Label lblErreurConnection;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox cbmdp;
     }
 }

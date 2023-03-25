@@ -146,7 +146,7 @@ namespace Dao
             {
                 cnx.Open();
                 using (MySqlCommand cmd = new MySqlCommand("select id from user where prenom=@prenom and mdp=@mdp;", cnx))
-                {
+                { 
                     cmd.Parameters.Add(new MySqlParameter("@prenom", prenom));
                     cmd.Parameters.Add(new MySqlParameter("@mdp", mdp));
                     using (MySqlDataReader rdr = cmd.ExecuteReader())

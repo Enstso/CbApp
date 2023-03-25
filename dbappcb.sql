@@ -6,7 +6,7 @@ Create Table User(
     id integer not null auto_increment,
     nom varchar(50),
     prenom varchar(50),
-    mdp varchar(50),
+    mdp varchar(100),
     administrator boolean,
     primary key(id)
 );
@@ -35,8 +35,8 @@ Create Table Eleve(
     primary key(id)
 );
 
-insert into User (nom,prenom,mdp,administrator) values ('losio','admin','mdp',1);
-insert into User (nom,prenom,mdp,administrator) values('Nom','BOB','mdp',0);
+insert into User (nom,prenom,mdp,administrator) values ('Cyril','admin','8296b82b0a068891c542086fe6f3a87d4c1de3536cf2c2f7d031872a10186ff1',1);
+insert into User (nom,prenom,mdp,administrator) values('BOB','BOB','d08d46c99196b815f0f8577c6e9ce47ade2881c2fb164d4dc4fc4d59aa59c247',0);
 insert into Cours (nom,ladate,idUser)values('PC','2002-03-27',1);
 insert into Eleve (nom,prenom,mail,telephone) values('Nom','Prenom','pre@outlook.com','0625467825');
 insert into Eleve (nom,prenom,mail,telephone) values('Name','Pre','prezo@outlook.com','0622167825');
