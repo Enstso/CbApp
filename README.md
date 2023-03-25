@@ -45,6 +45,37 @@ insert into User (nom,prenom,mdp,administrator) values ('Cyril','admin','8296b82
  ```
 <br>
 
+### Cas d'utilisations :
+
+```plantuml
+@startuml Appcb
+left to right direction
+:Admin:
+package Appcb{
+    Admin--(Se connecter)
+    (Se connecter)<..(Consulter ses cours) : <<include>>
+	(Se connecter)<..(Planifier des cours) : <<include>>
+	(Se connecter)<..(Ajouter des utilisateurs) : <<include>>
+    (Se connecter)<..(Supprimer des utilisateurs) : <<include>>
+    
+    
+}
+@enduml
+```
+
+```plantuml
+@startuml Appcb
+left to right direction
+:User:
+package Appcb{
+    User--(Se connecter)
+    (Se connecter)<..(Consulter ses cours du jour) : <<include>>
+	(Se connecter)<..(Voir ses élèves du jour) : <<include>>
+
+}
+@enduml
+```
+
  Nous avons procédé, au hachage du mot de passe.
 
  Le mot passe admin en clair est Grizzli.
