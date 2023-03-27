@@ -11,7 +11,7 @@ namespace Dao
     {
         static public MySqlConnection getConnection()
         {
-            return new MySqlConnection("user=root;password=;server=localhost;database=dbappcb");
+            return new MySqlConnection("user=adminsio;password=Siojjr2023;server=db4free.net; port=3306;database=dbappcb");
         }
     }
 

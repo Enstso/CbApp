@@ -16,7 +16,7 @@ namespace Dao
             using (MySqlConnection cnx = DaoConnection.getConnection())
             {
                 cnx.Open();
-                using (MySqlCommand cmd = new MySqlCommand("select id,nom,prenom,mail,telephone from Eleve;", cnx))
+                using (MySqlCommand cmd = new MySqlCommand("select id,nom,prenom,mail,telephone from eleve;", cnx))
                 {
                     MySqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
@@ -36,7 +36,7 @@ namespace Dao
             using (MySqlConnection cnx = DaoConnection.getConnection())
             {
                 cnx.Open();
-                using (MySqlCommand cmd = new MySqlCommand("select id,nom,prenom,mail,telephone from Eleve where id=@id;", cnx))
+                using (MySqlCommand cmd = new MySqlCommand("select id,nom,prenom,mail,telephone from eleve where id=@id;", cnx))
                 {
                     cmd.Parameters.Add(new MySqlParameter("@id",id));
                     MySqlDataReader rdr = cmd.ExecuteReader();

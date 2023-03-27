@@ -4,11 +4,13 @@ Contexte : Pour faciliter la gestion des cours du cabinet, nous avons proposé �
 
 ## Base de données 
  ```sql
-Drop database if exists dbappcb;
+drop database if exists dbappcb;
 Create database dbappcb;
 use dbappcb;
 
-Create Table User(
+
+
+Create Table user(
     id integer not null auto_increment,
     nom varchar(50),
     prenom varchar(50),
@@ -17,22 +19,16 @@ Create Table User(
     primary key(id)
 );
 
-Create  Table Cours(
+Create  Table cours(
     id integer not null auto_increment,
     nom varchar(100),
     idUser integer,
     ladate DateTime,
     primary key(id),
-    foreign key (idUser) references User(id)
+    foreign key (idUser) references user(id)
 );
 
-Create table Participe (
-    idCours integer not null,
-    idEleve integer not null,
-    primary key(idCours,idEleve)
-);
-
-Create Table Eleve(
+Create Table eleve(
     id integer not null auto_increment,
     nom varchar(50),
     prenom varchar(50),
@@ -41,7 +37,17 @@ Create Table Eleve(
     primary key(id)
 );
 
-insert into User (nom,prenom,mdp,administrator) values ('Cyril','admin','8296b82b0a068891c542086fe6f3a87d4c1de3536cf2c2f7d031872a10186ff1',1);
+Create table participe (
+    idCours integer not null,
+    idEleve integer not null,
+    primary key(idCours,idEleve),
+    foreign key(idCours) references cours(id),
+    foreign key(idEleve) references eleve(id)
+);
+
+
+
+insert into user (nom,prenom,mdp,administrator) values ('Cyril','admin','8296b82b0a068891c542086fe6f3a87d4c1de3536cf2c2f7d031872a10186ff1',1);
  ```
 <br>
 
@@ -231,3 +237,70 @@ Tentative de connexion :
 Résultat :
 
 ![img](imgdoc/f21.PNG)
+
+### Une base de données distante 
+
+Le cloud computing est la pratique consistant à utiliser des serveurs informatiques à distance et hébergés sur internet pour stocker, gérer et traiter des données, plutôt qu'un serveur local ou un ordinateur personnel.
+
+
+Pour la base de données de notre application nous avons décidé de faire appel au service de Azure.
+
+
+![img](imgdoc/f32.PNG)
+
+Diagramme de classe :
+
+![img](imgdoc/f22.PNG)
+
+L'offre :
+
+![img](imgdoc/f23.PNG)
+
+Un noyau virtuel (vCore) représente l’UC logique disponible pour votre serveur, offerte avec un choix à opérer entre plusieurs générations de matériel. Pour les serveurs créés à l’aide de vCores de 4e génération, les vCores sont basés sur des processeurs Intel E5-2673 v3 (Haswell) 2,4 GHz. Pour les serveurs créés à l’aide de vCores de la génération actuelle (Gen5), les vCores sont basés sur des processeurs Intel E5-2673 V4 (Broadwell) 2,3 GHz, Intel SP8160 (Skylake) et Intel Xeon Platinum 8272CL 2,5 GHz (Cascade Lake).
+
+![img](imgdoc/f24.PNG)
+
+Configuration matérielle :
+
+
+![img](imgdoc/f25.PNG)
+
+Azure nous laisse la possibilitée de sauvegader et de les restaurer :
+
+![img](imgdoc/f27.PNG)
+
+Azure propose un système d'archivage ce qui est parfait, pour la conservation dans la base active les données des clients et utilisateurs seront conservées pendant 2 ans maximum (sauf s’ils en demandent l’effacements).
+
+![img](imgdoc/f28.PNG)
+
+Azure nous informe sur les vulnérabilités de notre serveur, afin que les corrigions. De plus elle détecte les comportements suspects comme des tentatives de force brute, injection SQl etc...
+
+![img](imgdoc/f29.PNG)
+
+Azure intègre un système de journalisation ce qui est essentiel pour la traçabilité et l'imputabilité.
+
+Imputabilité : désigne la possibilité d'attribuer la responsabilité d'un acte à une personne clairement identifiée.
+
+traçabilité : La traçabilité permet de forunir un historique de l'utilisation d'un système d'information pour disposer d'une preuve des actions menées sur les données.
+
+
+![img](imgdoc/f30.PNG)
+
+Azure propose différents chiffrement des données :
+
+- TLS Pour les données en mouvement. 
+
+- TDE protège les données au repos, c’est-à-dire les fichiers de données et les fichiers journaux. Il vous permet d’être en conformité avec de nombreuses lois, réglementations et directives établies dans différents secteurs d’activité.
+
+Pour sécuriser une base de données utilisateur, vous pouvez prendre des précautions telles que :
+
+1. Concevoir un système sécurisé.    
+2. Chiffrer les ressources confidentielles.
+3. Créer un pare-feu autour des serveurs de base de données.
+
+- Always Encrypted est une fonctionnalité conçue pour protéger les données sensibles, telles que les numéros de carte de crédit ou les numéros d’identification nationaux (par exemple, les numéros de sécurité sociale américains), stockées dans Azure SQL Base de données, Azure SQL Managed Instance et SQL Server bases de données. Always Encrypted permet aux clients de chiffrer des données sensibles à l’intérieur des applications clientes et de ne jamais révéler les clés de chiffrement au moteur de base de données.
+
+
+
+![img](imgdoc/f31.PNG)
+
