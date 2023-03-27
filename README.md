@@ -1,6 +1,6 @@
 # Documentation de cbApp
 
-Contexte : Pour faciliter la gestion des cours du cabinet, nous avons proposé à notre maitre de stage, une application C# permettant de gérer les cours d'anglais du jour avec un sysème d'authentification, afin que chaque personne du cabinet puissent utiliser le logiciel. 
+Contexte : Pour faciliter la gestion des cours du cabinet, nous avons proposé à notre maitre de stage, une application C# permettant de gérer les cours d'anglais du jour avec un système d'authentification, afin que chaque personne du cabinet puissent utiliser le logiciel. 
 
 ## Base de données 
  ```sql
@@ -238,7 +238,7 @@ Résultat :
 
 ![img](imgdoc/f21.PNG)
 
-### Une base de données distante 
+### Base de données distante 
 
 Le cloud computing est la pratique consistant à utiliser des serveurs informatiques à distance et hébergés sur internet pour stocker, gérer et traiter des données, plutôt qu'un serveur local ou un ordinateur personnel.
 
