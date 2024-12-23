@@ -1,8 +1,8 @@
-# Documentation de cbApp
+# Write-up cbApp
 
-Contexte : Pour faciliter la gestion des cours du cabinet, nous avons proposé à notre maitre de stage, une application C# permettant de gérer les cours d'anglais du jour avec un système d'authentification, afin que chaque personne du cabinet puissent utiliser le logiciel. 
+Context: To simplify the management of courses at the office, we proposed to our internship supervisor a C# application that manages the English lessons of the day with an authentication system, allowing each person in the office to use the software.
 
-## Base de données 
+## Database
  ```sql
 drop database if exists dbappcb;
 Create database dbappcb;
@@ -51,7 +51,7 @@ insert into user (nom,prenom,mdp,administrator) values ('Cyril','admin','8296b82
  ```
 <br>
 
-### Cas d'utilisations :
+### Use cases :
 
 ```plantuml
 @startuml Appcb
@@ -82,19 +82,19 @@ package Appcb{
 @enduml
 ```
 
- Nous avons procédé, au hachage du mot de passe.
+We proceeded with password hashing.
 
- Le mot passe admin en clair est Grizzli.
+The plaintext admin password is Grizzli.
 
-L'interface de connexion :
+Login Interface:
 
  ![img](imgdoc/login.PNG)
 
 <br>
 
-Je suis connecté en tant qu' administrateur.
+I am logged in as an administrator.
 
-J'ai le choix entre voir les cours du jour, voir les eleves ou les utilisateurs : 
+I have the option to view the courses of the day, view the students, or view the users:
 
 
 ![img](imgdoc/MainAdmin.PNG)
@@ -102,13 +102,13 @@ J'ai le choix entre voir les cours du jour, voir les eleves ou les utilisateurs 
 
 <br>
 
-Nous avons la liste des utilisateurs :
+We have the list of users:
 
 ![img](imgdoc/VoirUser.PNG)  
 
 <br>
 
-Nous allons ajouter un nouvel utilisateur :
+We will add a new user:
 
 ![img](imgdoc/newUser.PNG)
 
@@ -116,25 +116,26 @@ Nous allons ajouter un nouvel utilisateur :
 
 <br>
 
-Le nouvel utilisateur a bien été ajouté :
+The new user has been successfully added :
+
 
 ![img](imgdoc/f2.PNG)
 
-Nous revenons sur le menu principal et cliquons sur voir les cours :
+NWe return to the main menu and click on "Voir les cours" :
 
 ![img](imgdoc/MainAdmin.PNG)
 
-Nous ajoutons un nouveau cours :
+We add a new course :
 
 
 ![img](imgdoc/f4.PNG)
 
-le cours a bien été ajouté :
+The course has been successfully added :
 
 
 ![img](imgdoc/f3.PNG)
 
-Nous revenons sur le menu  principal et cliquons sur voir les elèves et cliquons sur ajouter :
+We return to the main menu, click on "Voir élèves," and then click on "Ajouter" :
 
 ![img](imgdoc/MainAdmin.PNG)
 
@@ -144,161 +145,159 @@ Nous revenons sur le menu  principal et cliquons sur voir les elèves et cliquon
 
 <br>
  
- Nous pouvons voir les 2 élèves enregistrés, pour ajouter un nouvel élève cliquons sur Ajouter  :
+ We can see the 2 registered students. 
+ 
+ To add a new student, click on "Ajouter" :
 
 
 ![img](imgdoc/VoirEleve.PNG)
 
 
-Saisissons les informations :
+We enter the student's information :
+
 
 ![img](imgdoc/newEleve.PNG)
 
 <br>
 
-Le nouvel élève a bien été ajouté :
+The new student has been successfully added :
 
 ![img](imgdoc/f5.PNG)
 
-En cliquant sur L'élève nous accèdons à sa fiche :
+By clicking on the student, we access their profile :
 
 ![img](imgdoc/f6.PNG)
 
-Nous revenons au menu principal et ajoutons cet élève au cours de Bob :
+We return to the main menu and add this student to Bob’s course :
 
 
 
 ![img](imgdoc/f7.PNG)
 
-Nous cliquons sur ajouter, pour ajouter l'élève :
+We click on "Ajouter" to enroll the student :
 
 ![img](imgdoc/f8.PNG)
 
-Chosissons Adam : 
+We choose Adam : 
 
 ![img](imgdoc/f9.PNG)
 
-L'élève a bien été inscrit :
+The student has been successfully enrolled :
 
 ![img](imgdoc/f10.PNG)
 
-
-
-Connectons nous en tant que Bob pour consulter ses cours.
-
+Logging in as Bob to view his courses:
 
 ![img](imgdoc/f11.PNG)
 
-Le cours du jour de Bob est "Essai de" pour le 18/12/2022 à 15 h :
+Bob's course of the day is "Essai de" on 18/12/2022 at 3:00 PM :
 
 ![img](imgdoc/f12.PNG)
 
-Bob regarde les élèves de son cours, nous retrouvons Adam:
+Bob checks the students in his course, and we find Adam :
 
 ![img](imgdoc/f13.PNG)
 
-La fiche d'Adam :
+Adam's profile :
 
 
 ![img](imgdoc/f14.PNG)
 
-Pour tester notre mot de passe, nous avons récupéré la somme de contrôle et mise sur Crackstation :
+To test our password, we retrieved the hash and used Crackstation :
 
 ![img](imgdoc/f15.PNG)
 
-Le mot de passe admin a bien été retrouvé.
+The admin password has been successfully found.
 
-Pour remédier à cela, il faut premièrement sensibiliser les différents utilisateurs, pour qu'ils priviligienet des mots de passes forts. De plus nous allons procéder aus salage du mot de passe.
+To address this, we must first educate the users to prioritize strong passwords. Additionally, we will proceed with password salting.
 
 
-Le salage de mot de passe est une méthode pour rendre l'empreinte des mots de passe plus sûre en ajoutant aux mots de passe une chaîne de caractères aléatoires avant qu' ils soient hashés.
+Password Salting:
 
-Le code permettant le salage, lors de la création d'un nouvel utilisateur :
+Salting a password is a method of making password hashes more secure by adding a random string to the password before hashing it.
+
+The code for salting during the creation of a new user :
 
 ![img](imgdoc/f16.PNG)
 
-Pour la phase de test nous hashons notre potentiel futur mot de passe :
+For testing, we hash our potential future password :
 
 ![img](imgdoc/f17.PNG)
 
-La somme de contrôle du mot n'a pas été déterminée :
+The hash of the password has not been determined :
 
 ![img](imgdoc/f18.PNG)
 
-Code permettant le salage lors de l'authentification :
+Code for salting during authentication :
 
 ![img](imgdoc/f19.PNG)
 
-Tentative de connexion :
+Attempt to log in :
 
 
 ![img](imgdoc/f20.PNG)
 
-Résultat :
+Result :
 
 ![img](imgdoc/f21.PNG)
 
-### Base de données distante 
+### Remote Database
 
-Le cloud computing est la pratique consistant à utiliser des serveurs informatiques à distance et hébergés sur internet pour stocker, gérer et traiter des données, plutôt qu'un serveur local ou un ordinateur personnel.
+Cloud computing is the practice of using remote servers hosted on the internet to store, manage, and process data, rather than using a local server or personal computer.
 
-
-Pour la base de données de notre application nous avons décidé de faire appel au service de Azure.
+For our application’s database, we decided to use Azure services.
 
 
 ![img](imgdoc/f32.PNG)
 
-Diagramme de classe :
+Class Diagram :
 
 ![img](imgdoc/f22.PNG)
 
-L'offre :
+The Offer :
 
 ![img](imgdoc/f23.PNG)
 
-Un noyau virtuel (vCore) représente l’UC logique disponible pour votre serveur, offerte avec un choix à opérer entre plusieurs générations de matériel. Pour les serveurs créés à l’aide de vCores de 4e génération, les vCores sont basés sur des processeurs Intel E5-2673 v3 (Haswell) 2,4 GHz. Pour les serveurs créés à l’aide de vCores de la génération actuelle (Gen5), les vCores sont basés sur des processeurs Intel E5-2673 V4 (Broadwell) 2,3 GHz, Intel SP8160 (Skylake) et Intel Xeon Platinum 8272CL 2,5 GHz (Cascade Lake).
+A virtual core (vCore) represents the logical CPU available for your server, with several hardware generations to choose from. Servers created using 4th generation vCores use Intel E5-2673 v3 (Haswell) processors, while servers created using the current generation (Gen5) vCores use Intel E5-2673 V4 (Broadwell), Intel SP8160 (Skylake), and Intel Xeon Platinum 8272CL 2.5 GHz (Cascade Lake) processors.
 
 ![img](imgdoc/f24.PNG)
 
-Configuration matérielle :
+Hardware Configuration :
 
 
 ![img](imgdoc/f25.PNG)
 
-Azure nous laisse la possibilitée de sauvegader et de les restaurer :
+Azure provides the ability to back up and restore :
 
 ![img](imgdoc/f27.PNG)
 
-Azure propose un système d'archivage ce qui est parfait, pour la conservation dans la base active les données des clients et utilisateurs seront conservées pendant 2 ans maximum (sauf s’ils en demandent l’effacements).
+Azure offers an archiving system, which is ideal for storing customer and user data in the active database for up to 2 years (unless they request deletion).
 
 ![img](imgdoc/f28.PNG)
 
-Azure nous informe sur les vulnérabilités de notre serveur, afin que les corrigions. De plus elle détecte les comportements suspects comme des tentatives de force brute, injection SQl etc...
+Azure alerts us to vulnerabilities in our server so we can correct them. Additionally, it detects suspicious behaviors such as brute-force attempts, SQL injections, etc.
 
 ![img](imgdoc/f29.PNG)
 
-Azure intègre un système de journalisation ce qui est essentiel pour la traçabilité et l'imputabilité.
+Azure integrates a logging system, which is essential for accountability and traceability.
 
-Imputabilité : désigne la possibilité d'attribuer la responsabilité d'un acte à une personne clairement identifiée.
+Accountability refers to the ability to assign responsibility for an action to a clearly identified individual.
 
-traçabilité : La traçabilité permet de forunir un historique de l'utilisation d'un système d'information pour disposer d'une preuve des actions menées sur les données.
+Traceability allows providing a history of the use of an information system to maintain proof of actions performed on the data.
 
 
 ![img](imgdoc/f30.PNG)
 
-Azure propose différents chiffrement des données :
+Azure offers several data encryption options :
 
-- TLS Pour les données en mouvement. 
+TLS for data in transit.
+TDE (Transparent Data Encryption) protects data at rest, including data files and transaction logs. It helps maintain compliance with various laws, regulations, and industry standards.
+To secure a user database, you can take precautions such as:
 
-- TDE protège les données au repos, c’est-à-dire les fichiers de données et les fichiers journaux. Il vous permet d’être en conformité avec de nombreuses lois, réglementations et directives établies dans différents secteurs d’activité.
-
-Pour sécuriser une base de données utilisateur, vous pouvez prendre des précautions telles que :
-
-1. Concevoir un système sécurisé.    
-2. Chiffrer les ressources confidentielles.
-3. Créer un pare-feu autour des serveurs de base de données.
-
-- Always Encrypted est une fonctionnalité conçue pour protéger les données sensibles, telles que les numéros de carte de crédit ou les numéros d’identification nationaux (par exemple, les numéros de sécurité sociale américains), stockées dans Azure SQL Base de données, Azure SQL Managed Instance et SQL Server bases de données. Always Encrypted permet aux clients de chiffrer des données sensibles à l’intérieur des applications clientes et de ne jamais révéler les clés de chiffrement au moteur de base de données.
+Designing a secure system.
+Encrypting confidential resources.
+Creating a firewall around database servers.
+Always Encrypted is a feature designed to protect sensitive data, such as credit card numbers or national identification numbers (e.g., U.S. Social Security numbers), stored in Azure SQL Database, Azure SQL Managed Instance, and SQL Server databases. Always Encrypted allows customers to encrypt sensitive data within client applications and never expose encryption keys to the database engine.
 
 
 
